@@ -21,29 +21,23 @@ void Dialog::on_pushButton_clicked()
 {
     QString push("X2100E");
     qDebug()<<push;
-   // X_buf=push;
-    buf=Y_buf+X_buf+P_buf;
-    qDebug()<<buf;
+
     tcp->write(buf.toAscii());
 }
 
 void Dialog::on_pushButton_4_clicked()
 {
     QString down("X0800E");
-   // qDebug()<<down;
-    X_buf=Y_buf+X_buf+P_buf;
-    buf=Y_buf+X_buf+P_buf;
-    qDebug()<<buf;
+ qDebug()<<down;
+
     tcp->write(buf.toAscii());
 }
 
 void Dialog::on_pushButton_2_clicked()
 {
     QString left("Y0800E");
-   // qDebug()<<left;
-    Y_buf=left;
-    buf=Y_buf+X_buf+P_buf;
-    qDebug()<<buf;
+   qDebug()<<left;
+
     tcp->write(buf.toAscii());
 }
 
@@ -51,10 +45,8 @@ void Dialog::on_pushButton_2_clicked()
 void Dialog::on_pushButton_3_clicked()
 {
     QString right("Y2100E");
-   // qDebug()<<right;
-    Y_buf=right;
-    buf=Y_buf+X_buf+P_buf;
-    qDebug()<<buf;
+    qDebug()<<right;
+
     tcp->write(buf.toAscii());
 }
 
@@ -67,8 +59,7 @@ void Dialog::on_verticalSlider_valueChanged(int value)
     else
         power.insert(0,"P");
     power.append("E");
-    //qDebug()<<power;
-    buf=Y_buf+X_buf+P_buf;
-    qDebug()<<buf;
+    qDebug()<<power;
+
     tcp->write(buf.toAscii());
 }
